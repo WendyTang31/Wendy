@@ -1,3 +1,6 @@
+import robotFullRender from "./assets/77.png";
+import robotCloseRender from "./assets/99.png";
+
 const categories = [
   "Robotics x design",
   "Biomimicry",
@@ -12,6 +15,8 @@ const projects = [
     description:
       "A mechanical leg study inspired by ground-walking birds, linking morphology, movement, and fabrication.",
     accent: "from-stone-300 via-zinc-200 to-neutral-400",
+    image: robotFullRender,
+    imageAlt: "Full render of a bipedal robot leg mechanism.",
   },
   {
     title: "Ground-walking bird gait study",
@@ -121,15 +126,20 @@ function Hero() {
       </div>
 
       <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] border border-zinc-950/10 bg-zinc-900 p-6 text-white shadow-2xl shadow-zinc-950/20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.2),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.12),transparent_45%)]" />
+        <img
+          alt="Close-up render of the bipedal robot leg design."
+          className="absolute inset-0 h-full w-full object-cover opacity-85"
+          src={robotCloseRender}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/10 to-black/70" />
         <div className="relative flex h-full flex-col justify-between">
           <div className="flex items-start justify-between">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.28em] text-white/60">
-                Image placeholder
+                Featured render
               </p>
               <p className="mt-3 max-w-xs text-3xl font-medium tracking-[-0.04em]">
-                Hero render / process collage
+                Bipedal robot leg mechanism
               </p>
             </div>
             <span className="rounded-full border border-white/20 px-3 py-1 font-mono text-xs text-white/70">
@@ -137,15 +147,7 @@ function Hero() {
             </span>
           </div>
 
-          <div className="relative mx-auto h-56 w-full max-w-xl">
-            <div className="absolute left-8 top-10 h-10 w-64 rounded-full bg-white/20 blur-sm" />
-            <div className="absolute left-16 top-16 h-8 w-72 rotate-[-8deg] rounded-full bg-white/70" />
-            <div className="absolute right-20 top-4 h-24 w-40 rounded-3xl bg-white/20" />
-            <div className="absolute right-8 top-24 h-12 w-48 rotate-[18deg] rounded-full bg-white/50" />
-            <div className="absolute bottom-6 left-28 h-3 w-72 rotate-[34deg] rounded-full bg-white/55" />
-            <div className="absolute bottom-5 right-12 h-8 w-28 rounded-full bg-white/80" />
-            <div className="absolute bottom-2 right-4 h-3 w-44 rounded-full bg-black/40 blur-md" />
-          </div>
+          <div />
 
           <div className="grid gap-3 border-t border-white/15 pt-5 font-mono text-xs uppercase tracking-[0.22em] text-white/60 sm:grid-cols-3">
             <span>CAD renders</span>
@@ -221,15 +223,25 @@ function ProjectGrid() {
             <div
               className={`relative aspect-[4/3] bg-gradient-to-br ${project.accent}`}
             >
-              <div className="absolute inset-5 rounded-[1.25rem] border border-white/50 bg-white/25" />
-              <div className="absolute left-8 top-8 font-mono text-xs uppercase tracking-[0.22em] text-zinc-700/70">
-                Cloudinary slot
-              </div>
-              <div className="absolute bottom-7 left-7 right-7 grid grid-cols-3 gap-2">
-                <span className="h-2 rounded-full bg-zinc-950/25" />
-                <span className="h-2 rounded-full bg-zinc-950/15" />
-                <span className="h-2 rounded-full bg-zinc-950/30" />
-              </div>
+              {project.image ? (
+                <img
+                  alt={project.imageAlt}
+                  className="h-full w-full object-cover"
+                  src={project.image}
+                />
+              ) : (
+                <>
+                  <div className="absolute inset-5 rounded-[1.25rem] border border-white/50 bg-white/25" />
+                  <div className="absolute left-8 top-8 font-mono text-xs uppercase tracking-[0.22em] text-zinc-700/70">
+                    Cloudinary slot
+                  </div>
+                  <div className="absolute bottom-7 left-7 right-7 grid grid-cols-3 gap-2">
+                    <span className="h-2 rounded-full bg-zinc-950/25" />
+                    <span className="h-2 rounded-full bg-zinc-950/15" />
+                    <span className="h-2 rounded-full bg-zinc-950/30" />
+                  </div>
+                </>
+              )}
               <span className="absolute right-7 top-7 rounded-full bg-zinc-950 px-3 py-1 font-mono text-xs text-white">
                 {String(index + 1).padStart(2, "0")}
               </span>
