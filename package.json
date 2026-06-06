@@ -1,0 +1,36 @@
+{
+  "name": "wendy-portfolio",
+  "version": "1.0.0",
+  "description": "Design portfolio shell for work across design, engineering, and research.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WendyTang31/Wendy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WendyTang31/Wendy/issues"
+  },
+  "homepage": "https://github.com/WendyTang31/Wendy#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16"
+  }
+}
